@@ -3,7 +3,6 @@ import time
 import glob
 import os
 from os.path import exists
-from model import Server
 
 
 def getPathFileName(file_name: str, mais_atual:bool = True):
@@ -21,11 +20,6 @@ def ler_json_file(file_name):
     file = getPathFileName(file_name=file_name).replace('.\\', '')
     with open(file, 'r', encoding='utf-8') as outfile:
         return outfile.read().rstrip()
-
-
-def ler_servers(environment:str):
-    json_data = ler_json_file(file_name=environment)
-    return json.loads(json_data, object_hook=lambda d: Server(**d))
 
 
 def salvar_json(name, list_dados):

@@ -4,7 +4,6 @@ from flask import request
 import os
 import requests
 import util
-from model import Server
 import platform
 import json
 
